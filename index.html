@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+    <title>Welcome to my Portfolio</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
-  <body>
-    <!-- Beginning of Code -->
-    <h1>Portfolio</h1>
-    <button id="demo">Click Me!</button>
+ 
+  <body id="body" style="text-align: center;">
+    <!-- Beginning of Code Part 1-->
+
+
+    <!--Add CSS Flexbox Element Grid with "div"-->
+    <div id="wrapper">
+
+         <h1>My Projects</h1>
+       
+
+         <!--Add subtitle: "Add New Proj"-->
+         <h2>ADD NEW PROJECT</h2>
+         <div id="portfolio-grid"></div>
+
+            <!--Create form here: form action ref your page that executes the action-->
+            <form action ="/index.js">
+
+               <!--Add Image URL-->
+               <label for="imageURL"> <b>Image URL</label></b><br>
+                <br>
+                   <input type="text" id="imageURL" name="imageURL"><br>
+                    <br>
+                    <br>  
+                    <br>
+
+              <!-- Add Submit Button-->
+              <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
+                <br>
+
+              <div id="submit-images">
+                  <button onclick="handleClick()"></button>
+              <!--https://www.w3schools.com/css/css3_buttons.asp
+              https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
+              </div>
+            </form>
+    </div>
+
+
+  
+
+    
+
+      <!-- Type Proj Title: Part 2 
+      <label for="projTitle"> Project Title </label>
+      <input type="text" id="projTitle" name="projTitle"><br>
+      <br>
+
+      Add Text Box for Project Description
+      <label for="projDescr">Project Description</label>
+      <textarea id="projDescr" name="projDescr" rows="10" cols="100">
+
+      </textarea>
+      <br><br>
+      <button id="submitBtn">Press Me!</button>
+      https://www.w3schools.com/tags/tag_textarea.asp
+
+    </form>
+
+    <div class="submit-images">
+        <button onclick="handleClick()"></button>
+    </div> 
+    </form> -->
+
     <!-- End of Code -->
     <script type="text/javascript" src="index.js"></script>
   </body>
