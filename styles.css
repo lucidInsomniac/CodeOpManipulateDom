@@ -6,13 +6,18 @@ body {
 
 /* Parent Element Container: 
 images get uploaded and displayed in these squares*/
-.wrapper{ 
-  display: grid;
+#wrapper{ 
+  max-width: 600px;
+  margin: 0px auto;
+
+
+ 
+  /* display: grid;
   grid-template-columns: repeat (4, 1fr);
   grid-auto-rows: minmax(100px, 500px);
   grid-gap: 1em;
   justify-content: center;
-  align-items: center;  
+  align-items: center;   */
 
   /*
   flex-flow: row wrap; is the same as flex-direction + 
@@ -23,6 +28,31 @@ images get uploaded and displayed in these squares*/
 
 }
 
+#imagesUp { 
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr);
+  gap: 10px; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  align-items: center;
+  justify-content: center;
+
+  /*grid auto rows*/
+  /* grid-auto-rows: minmax(100px, auto); */
+}
+
+#imagesUp > img {  
+  text-align: center;
+  padding: 10px 0;
+}
+
+input[type=text], select, textarea {
+  width: 15%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}  
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 

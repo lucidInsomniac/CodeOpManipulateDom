@@ -5,17 +5,17 @@ function handleClick(event) {
   event.preventDefault();
 
   //Get values from form
-let input = window.document.getElementById("imageURL").value;
-console.log("button was pressed")
-console.log(input);        
+  let input = window.document.getElementById("imageURL").value;
+  console.log("button was pressed")
+  console.log(input);        
 
-// creating a new image, new var not from HTML
-let img =window.document.createElement('img');
+  // creating a new image, new var not from HTML
+  let img =window.document.createElement('img');
 
-// Store input data inside the new var, img.src
-img.src = input;
-document.getElementById('imagesUp').appendChild(img);
-document.getElementById('form').reset();
+  // Store input data inside the new var, img.src
+  img.src = input;
+  document.getElementById('imagesUp').appendChild(img);
+  document.getElementById('form').reset();
 
 }
 

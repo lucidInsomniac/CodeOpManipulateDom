@@ -1,0 +1,171 @@
+do form first
+ - function is event handler
+ -event listener to your daemon
+ -create a variable to store infor for form
+ -display image
+ -input to have an idea
+ -get url
+ -
+
+
+
+ Whiteboarding: 
+ -What is Whiteboarding?
+ Normally used in interviews, to test knowledge, algorithms, data structures
+ Given problem and work out code and go over solution
+
+ -Some background
+ White boards were available and better than paper
+ -practice is frozen in time
+ -computers were expensive
+
+ -How to approach Whiteboarding
+ Understand problem
+ Restate problemMost involve writing a function
+ You need to determine what paramters your func should accept
+ Need to give meaningful names
+
+Seek Clarification:
+Do you need to check for error conditions, potential cases
+what is function supposed to return, boolean, string, number, etc
+
+Psuedocode
+- dont jumpe immediately into coding even if you know How
+-try pseudocoding as tactic to find stratgey and test your logic
+-Be clear that you are gonna start by psuedocoding and talk through each step
+-it is ok to as if pseudo code makes sense
+
+ 
+Convert to code
+
+-Write actual code that will make your examples and test pass
+-if you forget syntax or method name, should be able to ask interviewer for inforbe sure totalk out loud as you solve
+question, the whole point is understanding your thought process
+-test the code
+-attempt to comment on algorithmic
+
+
+Refactor if you have time, to clean up code
+-dont hesitate to ask if your solution to look good
+-they might offer tips to improve
+-look articulate and easier to work with if you are willing to obj discuss ways to improve
+your work
+
+Whiteboarding @ Codeop
+-experience in friendly environment
+-step outside your comfort zone
+-connect with your self-confidence 
+
+
+-References
+Code Challenges
+Practice talking out loud
+Prac. interviews
+
+=======================================================
+HW:
+Idea but not need to be exact
+-It should go 4 accros and go next row
+How do you know which file to put in html or js
+- html is gonna be needed on html page
+- js not needed in html == dynamic
+
+Part 1:
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patchfolio</title>
+    <link rel="stylesheet" href="patchfolio.css">
+</head>
+<body>
+    
+    <div id="wrapper">
+
+        <h1>Patchfolio</h1>
+
+
+        <h2>My Patches</h2>
+        <div id="patch-grid"></div>
+    
+    
+        <h2>Add New Patch</h2>
+        <form>
+            <label>Color
+                <input name="color" type="text">
+            </label>
+            <button type="submit">Add Patch</button>
+        </form>
+
+    </div>
+
+
+    <script src="patchfolio.js"></script>
+</body>
+</html>
+
+
+
+===================================================
+CSS:
+
+Grid container, the patch is a grid cell (child of container)
+
+#wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+//grid container
+#patch-grid { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+//grid item
+.patch {  
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+====================================================
+JS:
+
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    // Get the value from the form and reset form field, empties out form
+    let form = event.target;
+    let color = form.elements.color.value;
+    console.log(color);
+    form.reset();
+
+    // Create patch wit correct text and background color
+    let patch = document.createElement('div');
+    patch.style.backgroundColor = color;
+    patch.classList.add('patch');
+    patch.textContent = color;
+
+    // Append to my patch grid container
+    let grid = document.getElementById('patch-grid');
+    grid.appendChild(patch);
+}
+
+//Tell the form to call handleSubmit() on "submit" events
+let form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
+addEventListener is HOF, you can execute immediately
