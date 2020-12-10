@@ -1,26 +1,24 @@
-const demo = window.document.getElementById("demo");
+const button = window.document.getElementById("button");
 
-function handleClick() {
+function handleClick(event) {
+  //prevents data from going to server
   event.preventDefault();
 
-  //Get value from form
-  let form = event.target;
-  let portfolioUp = form.elements.portfolioUp.value;
-  console.log("button was pressed!");
-  form.reset();
+  //Get values from form
+let input = window.document.getElementById("imageURL").value;
+console.log("button was pressed")
+console.log(input);        
 
-  //create Image Grid
-  let portfolio = document.createElement('div');
-  portfolio.style.backgroundPort = portfolioUp;
-  portfolio.classList.add('portfolio');
-  portfolio.textContent = portfolioUp;
+// creating a new image, new var not from HTML
+let img =window.document.createElement('img');
 
-  //Append to Image Grid
-  let grid = document.getElementById('portfolio-grid');
-  grid.appendChild(portfolio)
+// Store input data inside the new var, img.src
+img.src = input;
+document.getElementById('imagesUp').appendChild(img);
+document.getElementById('form').reset();
+
 }
 
-let form = document.querySelector('form')
-demo.addEventListener("click", handleClick);
+button.addEventListener("click", handleClick);
 
 

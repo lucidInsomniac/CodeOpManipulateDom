@@ -1,63 +1,40 @@
 body {
   background: #12448f;
   color: white;
+  text-align: center;
 }
 
 /* Parent Element Container: 
 images get uploaded and displayed in these squares*/
 .wrapper{ 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat (4, 1fr);
+  grid-auto-rows: minmax(100px, 500px);
   grid-gap: 1em;
-  /*grid auto rows*/
-  grid-auto-rows: minmax(100px, auto);
+  justify-content: center;
+  align-items: center;  
+
   /*
   flex-flow: row wrap; is the same as flex-direction + 
     flex-wrap
   flex-direction: row; flex ittems left to right
   flex-wrap: wrap;  specifies flex items to wrap if necessary*/ /*items spaced evenly btwn each other and edges*/
-/*items are in the middle of the container*/
+  /*items are in the middle of the container*/
 
 }
 
-/* .nested {  can nestle other items inside items
-display: grid;
-grid-template-columns: repeat (3, 1fr);
-grid-auto-rows: 70px;
-grid-gap: 1em;
-} */
-
-.wrapper > div {
-  background: rgb(142, 175, 115);
-  padding: 1em;
-}
-
-.wrapper > div:nth-child(odd) {
-  background: rgb(228, 141, 42);
-}
-
-/* .nested > div {
-  border: #e2d693 1px solid;
-  padding: 1em;
-} */
-
-input[type=text], select, textarea {
-  width: 15%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}  
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 button {
   background:url(./Images/SubmitButton2.jpg) no-repeat;
   width: 110px;
-  height: 80px;
+  height: 48px;
   cursor: pointer;
   border: 0;
   background-size: 100%; /* To fill the dimensions of container (button), or */
   /* background-size: 40px auto; to specify dimensions explicitly */
   
 }
+
+/*https://www.youtube.com/watch?v=jV8B24rSN5o*/

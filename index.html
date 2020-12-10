@@ -2,50 +2,47 @@
 <html lang="en">
 
   <head>
-    <title>Welcome to my Portfolio</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
  
-  <body id="body" style="text-align: center;">
+  <body id="body">
     <!-- Beginning of Code Part 1-->
 
-
-    <!--Add CSS Flexbox Element Grid with "div"-->
+    <!--cointainer for grid forimages-->
     <div id="wrapper">
 
-         <h1>My Projects</h1>
-       
+    <h1>Welcome to My Portfolio</h1>
 
-         <!--Add subtitle: "Add New Proj"-->
-         <h2>ADD NEW PROJECT</h2>
-         <div id="portfolio-grid"></div>
+    <!--Add subtitle: "Add New Proj"-->
+    <h4>ADD NEW PROJECT</h4>
 
-            <!--Create form here: form action ref your page that executes the action-->
-            <form action ="/index.js">
 
-               <!--Add Image URL-->
-               <label for="imageURL"> <b>Image URL</label></b><br>
-                <br>
-                   <input type="text" id="imageURL" name="imageURL"><br>
-                    <br>
-                    <br>  
-                    <br>
+    <!--Add CSS items in Grid with "div"-->
+    <div id="imagesUp"> </div> <br>
+      <br>
 
-              <!-- Add Submit Button-->
-              <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
-                <br>
 
-              <div id="submit-images">
-                  <button onclick="handleClick()"></button>
-              <!--https://www.w3schools.com/css/css3_buttons.asp
-              https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
-              </div>
-            </form>
+    <!--Create form here: form action ref your page that executes the action-->
+    <form id ="form">
+
+      <!--Add Image URL-->
+      <label> <b>Image URL</b><br>
+          <br>
+         <input type="text" id="imageURL" name="imageURL"><br>
+              <br>
+              <br>
+              <br>
+        </label>
+    </form>
+
+    <!-- Add Submit Button-->
+    <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
+    <br>
+
+        <button id="button" type ="click" href="styles.css"></button>
+        <!--https://www.w3schools.com/css/css3_buttons.asp
+         https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
     </div>
-
-
-  
-
     
 
       <!-- Type Proj Title: Part 2 
