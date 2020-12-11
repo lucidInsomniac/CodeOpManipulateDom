@@ -10,31 +10,46 @@
   <body id="body">
     <!-- Beginning of Code Part 1-->
 
-    <!--cointainer for grid forimages-->
+    <!--cointainer to hold everything in the page-->
     <div id="wrapper">
 
     <h1>Welcome to My Portfolio</h1>
+    
 
-    <!--Add subtitle: "Add New Proj"-->
+    <!--This div feat-section is hidden until the 1st cell is clicked-->
+    <div id ='feat-section'>
+      <h2>Featured Portfolio</h2>
+      <div id='feat-grid'>
+        <div id='feat-image'></div>
+        <div id='feat-descr'></div>
+      </div>
+    </div>
+
+
+    <!--Add "My Portfolio" ==  container for Image items/Child To append to CSS grid-->
+    <h2>My Portfolio</h2>
+    <div id="imagesUp"> </div>
+
+
+    <!--Add "Add New Proj" == This will be the Image item/ Child
+    of the container-->
     <h4>ADD NEW PROJECT</h4>
-
-
-    <!--Add CSS items in Grid with "div"-->
-    <div id="imagesUp"> </div> <br>
+      <br>
       <br>
 
 
     <!--Create form here: form action ref your page that executes the action-->
-    <form id ="form">
+    <form>
 
       <!--Add Image URL-->
-      <label> <b>Image URL</b><br>
+      <label for='imageURL'> <b>Image URL</label></b><br>
           <br>
-         <input type="text" id="imageURL" name="imageURL"><br>
-              <br>
-              <br>
-              <br>
-        </label>
+         <input id="imageURL" name="imageURL" type="text"><br>
+            <br>
+            <br>
+            <br>
+      <label for='descr'>Description</label>
+      <textarea id='descr' name='descr'></textarea>
     </form>
 
     <!-- Add Submit Button-->
