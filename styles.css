@@ -4,12 +4,12 @@ body {
   text-align: center;
 }
 
+
 /* Parent Element Container: 
 images get uploaded and displayed in these squares*/
 #wrapper{ 
   max-width: 600px;
   margin: 0px auto;
-
 
  
   /* display: grid;
@@ -28,7 +28,28 @@ images get uploaded and displayed in these squares*/
 
 }
 
-#imagesUp { 
+
+h2 {
+  border-bottom: 1px solid white;
+  margin-top: 2em;
+}
+
+/*This applies to all boxes*/
+input, textarea {
+  display: inline-block;
+  width: 32%;
+  margin-bottom: 2em;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /*Lets you reseize description box without changing position on page*/
+  resize: inline; 
+
+} 
+
+
+/*This is the grid container for items/Child*/
+#image-grid { 
   display: grid;
   /* grid-template-columns: repeat(4, 1fr);
   gap: 10px; */
@@ -41,30 +62,50 @@ images get uploaded and displayed in these squares*/
   /* grid-auto-rows: minmax(100px, auto); */
 }
 
-#imagesUp > img {  
+/*This is the item/Child to put inside the grid*/
+.img {  
   text-align: center;
   padding: 10px 0;
+  background-size: 100%
 }
 
-input[type=text], select, textarea {
-  width: 15%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}  
+/*Add feat-grid, div under Featured Portfolio*/
+#feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px
+}
+
+
+/*Add feat-section, div above h2 tag for Featured Portfolio*/
+#feat-section {
+  /*This hides gaps and doesn't 
+  display until cell clicked*/
+  display: none; 
+}
+
+
+/*Add feat-image, div below div tag for feat-grid*/
+#feat-image {
+  text-align: center;
+  padding: 50px 0;
+}
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
-button {
+
+input[type=image] {
   background:url(./Images/SubmitButton2.jpg) no-repeat;
   width: 110px;
-  height: 48px;
+  height: 45px;
   cursor: pointer;
-  border: 0;
+  border: solid black;
+  border-radius: 4px;
   background-size: 100%; /* To fill the dimensions of container (button), or */
   /* background-size: 40px auto; to specify dimensions explicitly */
-  
 }
 
-/*https://www.youtube.com/watch?v=jV8B24rSN5o*/
+/*
+https://www.w3schools.com/Tags/att_input_type_image.asp
+https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
+https://www.youtube.com/watch?v=jV8B24rSN5o*/

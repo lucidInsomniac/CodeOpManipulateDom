@@ -28,12 +28,12 @@
 
     <!--Add "My Portfolio" ==  container for Image items/Child To append to CSS grid-->
     <h2>My Portfolio</h2>
-    <div id="imagesUp"> </div>
+    <div id="image-grid"> </div>
 
 
     <!--Add "Add New Proj" == This will be the Image item/ Child
     of the container-->
-    <h4>ADD NEW PROJECT</h4>
+    <h2>ADD NEW PROJECT</h2>
       <br>
       <br>
 
@@ -41,22 +41,24 @@
     <!--Create form here: form action ref your page that executes the action-->
     <form>
 
+      <!--Add Portfolio Title-->
+      <label for='portTitle'> <b>Portfolio Title</label></b>
+      <input id="portTitle" name="portTitle" type="text">
+      
       <!--Add Image URL-->
-      <label for='imageURL'> <b>Image URL</label></b><br>
-          <br>
-         <input id="imageURL" name="imageURL" type="text"><br>
-            <br>
-            <br>
-            <br>
-      <label for='descr'>Description</label>
-      <textarea id='descr' name='descr'></textarea>
+      <label for='imageURL'> <b>Image URL</b></label>
+      <input id="imageURL" name="imageURL" type="text"><br>
+      <br>
+      <!--Add Description-->
+      <label for='descr'><b>Description</b></label><br>
+      <textarea id='descr' name='descr'></textarea> <br>
+
+      <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
+      <br>
+      <!-- Add Submit Button-->
+      <input type ="image" alt= "Submit" src="Images/SubmitButton2.jpg"> 
+ 
     </form>
-
-    <!-- Add Submit Button-->
-    <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
-    <br>
-
-        <button id="button" type ="click" href="styles.css"></button>
         <!--https://www.w3schools.com/css/css3_buttons.asp
          https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
     </div>
