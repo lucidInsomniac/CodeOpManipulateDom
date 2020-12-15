@@ -47,7 +47,7 @@ images get uploaded and displayed in these squares*/
 }
 
 input[type=text], select, textarea {
-  width: 15%;
+  width: 40%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

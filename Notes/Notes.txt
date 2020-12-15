@@ -169,3 +169,257 @@ let form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 
 addEventListener is HOF, you can execute immediately
+
+
+Part 1:
+handleFormatSubmit(event)
+    prevent form submit to server
+    read data from form fieldcreate <img> & set 'src'attr
+    append to grid attr
+=====================================================
+Part2: Demo Notes
+
+Browser console can see all global variables and info 
+can be shown.
+
+We added new text field that collects id
+
+Add PRoj title
+Add Text box
+
+
+How to store and find it later?
+When infor is input into form, we need another variable to store it in
+
+How do we save it?
+    save form fields: id, imgurl, title, description) in global obj
+    increment global ID counter
+========================================================
+
+
+HTML:
+
+Click on = each cell has an id and cell numberdetect when click happens 
+on thumnail, what value saved on form will be featured on patch
+
+
+
+<div id= "my-grid"> </div>
+
+CSS:
+
+#my-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+
+#my-grid > div {
+
+}
+
+
+
+Dynamically create grid
+
+
+JS:
+
+function fillGrid(gridContainer, count) {
+    for (let i=1; i<= count; i++) {
+    let div = document.createElement('div);
+    div.textContent = 
+    div.id = `cell-` + i;
+
+    //Append to grid container
+    //don't need to return because it is already getting
+   // div.addEventListener('click', handleClick); This adds to every cell
+    gridContainer.appendChild(div);
+    }
+}
+
+
+Click handler when click on cells, print on console
+
+//Easy, but would need another handler to handle each cell. If 
+we assign click handler 
+to entire container vs item,  grid container can give info if 
+all cells appended to container this is possible.
+
+function handleClick(event) {
+
+    /*don't want click to respond in between gaps, only grid-cell
+    what can we do? Add exception by looking at id.target,
+    if it was container, we want to ignore the click. container
+    has a name "my-grid" and we can fix that.*/
+
+    if (event.target.id !== 'my-grid){
+        //want it to do something
+        //when click happens
+        console.log(event.target.id);
+    }
+
+    //if not detected as grid container, detect as something else
+
+}
+
+
+
+//Init:
+
+//Display grid
+let grid = document.getElementById('my-grid);
+//Listens for click on webpage
+grid.addEventListener('click', handleClick);
+//When it hears click, execute function
+fillGrid(grid, 5);
+
+
+Block element vs in-line element: Go to css
+Block- starts on new line
+in-line - same line
+===========================================================
+
+
+Part 2: HW 
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patchfolio</title>
+    <link rel="stylesheet" href="patchfolio.css">
+</head>
+<body>
+    
+    <div id="wrapper">
+
+        <h1>Patchfolio</h1>
+
+
+        <h2>My Patches</h2>
+        <div id="patch-grid"></div>
+    
+    
+        <h2>Add New Patch</h2>
+        <form>
+            <!--use "for" to call label attr-->
+            <label for="color">CSS Color</label> 
+            <!--id and name used for form fields, to be available for for.elements-->
+                <input id="color" name="color" type="text">
+            
+            <!--Add text area-->
+            <label for="descr">Description</label> 
+            <textarea id="descr" name="descr"></textarea>
+
+            <button type="submit">Add Patch</button>
+        </form>
+
+    </div>
+
+
+    <script src="patchfolio.js"></script>
+</body>
+</html>
+
+----------------------------------------------------------
+
+
+JS:
+//global variables in caps vs local in lower case
+let AllPatches = {};
+
+//each patch has unique id
+let NextPatchID = 1; 
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    // Get the values: color and descr from the form and reset field
+    let form = event.target;
+    let color = form.elements.color.value;
+    let descr = form.elements.descr.value;
+    console.log(color);
+    form.reset();
+
+    //Save data to global obj
+    AllPatches(NextPatchID) ={ color: color, descr: descr}; //or color, descr
+   
+
+
+    // Create patch with correct text and background color
+    let patch = document.createElement('div');
+    patch.style.backgroundColor = color;
+    patch.classList.add('patch');
+    patch.textContent = color;
+    // ==========Connect unique IDs here!=======================
+    //Every patch id is unique, need diff num for each
+    patch.id = NextPatchID
+    NextPatchID++;
+
+    // Append patch to grid container
+    let grid = document.getElementById('patch-grid');
+    grid.appendChild(patch);
+}
+
+let form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
+--------------------------------------------------------
+CSS
+
+#wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+/* want css color and descr on diff lines
+and wider
+*/
+input, textarea { 
+    display: block;
+    width: 50%; /*of container*/
+    margin-bottom: 1em /*gap btwn items*/
+    /*make it taller*/
+    
+}
+
+#patch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.patch {
+    text-align: center;
+    padding: 10px 0;
+}
+
+============================================================
+
+
+Part 3: 
+Click thumbnail and display as feature
+How do we click on the thubmnails 
+
+handleImageClick(event)
+    determine id of image that was clicked
+    get that img's info from global obj, need global variable outside functions
+    update featured project section
+
+
+HTML - Create feature proj section
+
+
+
+
+
