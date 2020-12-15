@@ -1,72 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Portfolio</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
   </head>
  
   <body id="body">
     <!-- Beginning of Code Part 1-->
 
-    <!--cointainer for grid forimages-->
+    <!--Audio Player controls-->
+    <div id="audio">
+      <figure>
+        <figcaption>Retro Forest by David Desliyan:</figcaption><br>
+        <audio
+            controls
+            src="./Images/2019-12-09_-_Retro_Forest_-_David_Fesliyan.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+      </figure>
+      </div>
+
+    <!--cointainer to hold everything in the page-->
     <div id="wrapper">
 
-    <h1>Welcome to My Portfolio</h1>
 
-    <!--Add subtitle: "Add New Proj"-->
-    <h4>ADD NEW PROJECT</h4>
+    <h1>Welcome to My Portfolio</h1> <br>
+    <br>
+
+    <!--This div feat-section is hidden until the 1st cell is clicked-->
+    <div id ='feat-section'>
+      <h2>Featured Portfolio</h2>
+      <div id='feat-grid'>
+        <div id='feat-title'></div> <br>
+        <img id='feat-image'>
+        <div id='feat-descr'></div>
+      </div>
+    </div>
 
 
-    <!--Add CSS items in Grid with "div"-->
-    <div id="imagesUp"> </div> <br>
+    <!--Add "My Portfolio" ==  container for Image items/Child To append to CSS grid-->
+    <h2>My Portfolio</h2>
+    <div id="image-grid"> </div> <br>
+    <br>
+
+
+    <!--Add "Add New Proj" == This will be the Image item/ Child
+    of the container-->
+    <h3>ADD NEW PROJECT</h3>
+      <br>
       <br>
 
 
     <!--Create form here: form action ref your page that executes the action-->
-    <form id ="form">
+    <form>
 
+      <!--Add Portfolio Title-->
+      <div>
+      <label for='portTitle'> <b>Portfolio Title</b><br>
+      <input id="portTitle" name="portTitle" type="text">
+      </label>
+      </div>
+      
       <!--Add Image URL-->
-      <label> <b>Image URL</b><br>
-          <br>
-         <input type="text" id="imageURL" name="imageURL"><br>
-              <br>
-              <br>
-              <br>
-        </label>
+      <div>
+      <label for='imageURL'> <b>Image URL</b><br>
+      <input id="imageURL" name="imageURL" type="text">
+      </label>
+      </div>
+      <br>
+      <br>
+    
+      <!--Add Description-->
+      <div id="descr">
+      <label for='descr'><b>Description</b><br>
+      <textarea id='descr' name='descr'></textarea>
+      </label> 
+      </div>
+      <br>
+
+      <label for="submit-images"> <b>Are we ready to go, Scotty?</b><br>
+      <br>
+      
+      <!-- Add Submit Button-->
+      <input type ="image" alt= "Submit" src="Images/SubmitButton2.jpg"> 
+    </label>
     </form>
-
-    <!-- Add Submit Button-->
-    <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
-    <br>
-
-        <button id="button" type ="click" href="styles.css"></button>
         <!--https://www.w3schools.com/css/css3_buttons.asp
          https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
     </div>
     
-
-      <!-- Type Proj Title: Part 2 
-      <label for="projTitle"> Project Title </label>
-      <input type="text" id="projTitle" name="projTitle"><br>
-      <br>
-
-      Add Text Box for Project Description
-      <label for="projDescr">Project Description</label>
-      <textarea id="projDescr" name="projDescr" rows="10" cols="100">
-
-      </textarea>
-      <br><br>
-      <button id="submitBtn">Press Me!</button>
-      https://www.w3schools.com/tags/tag_textarea.asp
-
-    </form>
-
-    <div class="submit-images">
-        <button onclick="handleClick()"></button>
-    </div> 
-    </form> -->
-
     <!-- End of Code -->
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
+
+<!--https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6
+Background:https://wallpaperaccess.com/8-bit>-->

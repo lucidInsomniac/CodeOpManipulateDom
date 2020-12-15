@@ -1,70 +1,135 @@
 body {
-  background: #12448f;
+  background: url(./Images/spaceship.jpg) no-repeat;
+  padding:75px; /* adds some space between edges of browser and start of letters and images*/
+  min-height:1000px; /* Set min height allows background image to not repeat*/
   color: white;
   text-align: center;
+  background-size:cover; /* expands with div without deforming */
+  /* overflow: scroll; */
 }
+
+
+/* Audio Player */
+figure {
+  margin: 0;
+  float: left; 
+  color: white;
+  width: 10%; /*changes width of text on player*/
+}
+
 
 /* Parent Element Container: 
 images get uploaded and displayed in these squares*/
 #wrapper{ 
-  max-width: 600px;
+  max-width: 800px;
   margin: 0px auto;
-
-
- 
-  /* display: grid;
-  grid-template-columns: repeat (4, 1fr);
-  grid-auto-rows: minmax(100px, 500px);
-  grid-gap: 1em;
-  justify-content: center;
-  align-items: center;   */
-
-  /*
-  flex-flow: row wrap; is the same as flex-direction + 
-    flex-wrap
-  flex-direction: row; flex ittems left to right
-  flex-wrap: wrap;  specifies flex items to wrap if necessary*/ /*items spaced evenly btwn each other and edges*/
-  /*items are in the middle of the container*/
-
+  color: white;
 }
 
-#imagesUp { 
-  display: grid;
-  /* grid-template-columns: repeat(4, 1fr);
-  gap: 10px; */
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
-  align-items: center;
-  justify-content: center;
 
-  /*grid auto rows*/
-  /* grid-auto-rows: minmax(100px, auto); */
+h2 {
+  border-bottom: 1px solid white;
+  margin-top: 2em;
+  padding: 10px;;
+  color: white;
 }
 
-#imagesUp > img {  
+/*This applies to all boxes*/
+input[type=text], textarea {
+  display: inline-block;
   text-align: center;
-  padding: 10px 0;
-}
-
-input[type=text], select, textarea {
-  width: 40%;
   padding: 10px;
+  margin-bottom: 2em;
+  margin-top:10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical;
+  
+} 
+
+label[for=portTitle] {
+  width: 50%;
+  float: left;
+  color: white;
+}
+
+label[for=imageURL] {
+  width: 50%;
+  float: right;
+  color: white;
+}
+
+label[for=descr] {
+  width: 100%;
+  float: center;
+  /*Lets you reseize description box without changing position on page*/
+  resize: inline; 
+  color: white;
+  margin-bottom: 2em;
+}
+
+/*This is the grid container for items/Child*/
+#image-grid { 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+/*This is the item/Child to put inside the grid*/
+.img {  
+  text-align: center;
+  padding: 10px 0;
+  background-size: 100%
+}
+
+
+input[type=text], select, textarea {  
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;resize: vertical;
+  text-align: center;
 }  
+
+/*Add feat-grid, div under Featured Portfolio*/
+#feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px
+}
+
+
+/*Add feat-section, div above h2 tag for Featured Portfolio*/
+#feat-section {
+  /*This hides gaps and doesn't 
+  display until cell clicked*/
+  display: none; 
+}
+
+
+/*Add feat-image, div below div tag for feat-grid*/
+#feat-image {
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  background-size: 100%;
+}
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
-button {
-  background:url(./Images/SubmitButton2.jpg) no-repeat;
+
+input[type=image] {
   width: 110px;
-  height: 48px;
+  padding:0px;
   cursor: pointer;
-  border: 0;
-  background-size: 100%; /* To fill the dimensions of container (button), or */
-  /* background-size: 40px auto; to specify dimensions explicitly */
-  
+  border: solid rgb(245, 245, 245);
+  border-radius: 10px;
+  background-size: 100%; /*To fill the dimensions of container (button)*/
 }
 
-/*https://www.youtube.com/watch?v=jV8B24rSN5o*/
+/*
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image
+https://www.w3schools.com/Tags/att_input_type_image.asp
+https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
+https://www.youtube.com/watch?v=jV8B24rSN5o*/
