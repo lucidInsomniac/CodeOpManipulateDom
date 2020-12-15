@@ -1,7 +1,16 @@
 body {
-  background: #12448f;
+  background: url(./Images/spaceship.jpg);
   color: white;
   text-align: center;
+  background-size:cover; /* expands with div without deforming */
+  overflow: scroll;
+}
+
+
+/* Audio Player */
+figure {
+  margin: 0;
+  float: left; 
 }
 
 
@@ -109,7 +118,7 @@ input[type=image] {
   cursor: pointer;
   border: solid black;
   border-radius: 4px;
-   background-size: 100%; /*To fill the dimensions of container (button)*/
+  background-size: 100%; /*To fill the dimensions of container (button)*/
 }
 
 /*
