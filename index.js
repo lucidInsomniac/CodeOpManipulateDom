@@ -2,7 +2,6 @@
 let AllImages = {}
 let NextImageId= 1;
 
-
 /*******************************Event Handlers********************************************/
 function handleSubmit(event) {
   //prevents data from going to server
@@ -30,7 +29,7 @@ function handleSubmit(event) {
   img.classList.add('img');
   img.innerText = imageURL
   //CSS "background-image"
-  img.style.backgroundColor = imageURL;
+  img.style.backgroundImage = imageURL;
   img.id = imageId
 
   //Append to my "image-grid" container
@@ -43,23 +42,40 @@ function handleSubmit(event) {
 //action when user clicks on image cells on container
 function handleClick(event) {
   //Ignores clicks that are not on image/cell
-  if (event.target.id === "image-grid" ){
+  if (event.target.id === 'image-grid' ){
     return;
   }
 
   //Get corresponding  data for this image
   let imageId = event.target.id;
-  let data = AllImages[imageId];
+  console.log(imageId)
 
-  //Show data in featured image section
+  let data = AllImages[imageId];
+  console.log(data)
+
+  // Get the expanded image
   let featImage = document.getElementById('feat-image');
-  featImage.textContext = data.imageURL
-  featImage.style.backgroundColor= data.imageURL;
+  console.log(featImage) //url text shows but no image
+
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  featImage.textContent = data.imageURL 
+  console.log(data.imageURL) //image shows in console
+
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  featImage.src = data.imageURL;
+
+//Image is supposed to display in feat-section here
+  featImage.style.backgroundImage = data.imageURL;
+  console.log(data.imageURL) //image shows in console
+
+  document.getElementById('feat-title').textContent = data.portTitle
   document.getElementById('feat-descr').textContent = data.descr
 
   //Make sure featured image section is visible
   document.getElementById('feat-section').style.display = 'block';
+
 }
+
 
 
 /*******************************Initialization********************************************/

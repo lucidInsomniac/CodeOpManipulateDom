@@ -11,14 +11,6 @@ images get uploaded and displayed in these squares*/
   max-width: 600px;
   margin: 0px auto;
 
- 
-  /* display: grid;
-  grid-template-columns: repeat (4, 1fr);
-  grid-auto-rows: minmax(100px, 500px);
-  grid-gap: 1em;
-  justify-content: center;
-  align-items: center;   */
-
   /*
   flex-flow: row wrap; is the same as flex-direction + 
     flex-wrap
@@ -37,16 +29,31 @@ h2 {
 /*This applies to all boxes*/
 input, textarea {
   display: inline-block;
-  width: 32%;
+  text-align: center;
+  padding: 10px;
   margin-bottom: 2em;
-  padding: 5px;
+  margin-top:8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /*Lets you reseize description box without changing position on page*/
-  resize: inline; 
-
+  
 } 
 
+label[for=portTitle] {
+  width: 50%;
+  float: left;
+}
+
+label[for=imageURL] {
+  width: 50%;
+  float: right;
+}
+
+label[for=descr] {
+width: 50%;
+float: center;
+/*Lets you reseize description box without changing position on page*/
+resize: inline; 
+}
 
 /*This is the grid container for items/Child*/
 #image-grid { 
@@ -91,21 +98,22 @@ input, textarea {
   padding: 50px 0;
 }
 
+
+
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 
 input[type=image] {
-  background:url(./Images/SubmitButton2.jpg) no-repeat;
   width: 110px;
-  height: 45px;
+  padding:0px;
   cursor: pointer;
   border: solid black;
   border-radius: 4px;
-  background-size: 100%; /* To fill the dimensions of container (button), or */
-  /* background-size: 40px auto; to specify dimensions explicitly */
+   background-size: 100%; /*To fill the dimensions of container (button)*/
 }
 
 /*
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image
 https://www.w3schools.com/Tags/att_input_type_image.asp
 https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
 https://www.youtube.com/watch?v=jV8B24rSN5o*/

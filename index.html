@@ -20,6 +20,7 @@
     <div id ='feat-section'>
       <h2>Featured Portfolio</h2>
       <div id='feat-grid'>
+        <div id='feat-title'></div> <br>
         <div id='feat-image'></div>
         <div id='feat-descr'></div>
       </div>
@@ -42,22 +43,34 @@
     <form>
 
       <!--Add Portfolio Title-->
-      <label for='portTitle'> <b>Portfolio Title</label></b>
+      <div>
+      <label for='portTitle'> <b>Portfolio Title</b><br>
       <input id="portTitle" name="portTitle" type="text">
+      </label>
+      </div>
       
       <!--Add Image URL-->
-      <label for='imageURL'> <b>Image URL</b></label>
-      <input id="imageURL" name="imageURL" type="text"><br>
+      <div>
+      <label for='imageURL'> <b>Image URL</b><br>
+      <input id="imageURL" name="imageURL" type="text">
+      </label>
+      </div>
       <br>
+      <br>
+    
       <!--Add Description-->
-      <label for='descr'><b>Description</b></label><br>
-      <textarea id='descr' name='descr'></textarea> <br>
+      <div id="descr">
+      <label for='descr'><b>Description</b><br>
+      <textarea id='descr' name='descr'></textarea>
+      </label> 
+      </div>
+      <br>
 
-      <label for="submit-images"> <b>Are we ready to go, Scotty?</label></b><br>
+      <label for="submit-images"> <b>Are we ready to go, Scotty?</b><br>
       <br>
       <!-- Add Submit Button-->
       <input type ="image" alt= "Submit" src="Images/SubmitButton2.jpg"> 
- 
+    </label>
     </form>
         <!--https://www.w3schools.com/css/css3_buttons.asp
          https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_input_type_image-->
