@@ -5,7 +5,6 @@ body {
   color: white;
   text-align: center;
   background-size:cover; /* expands with div without deforming */
-  /* overflow: scroll; */
 }
 
 
@@ -71,7 +70,7 @@ label[for=descr] {
 #image-grid { 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
+  grid-gap: 1em;
   align-items: center;
   justify-content: center;
 }

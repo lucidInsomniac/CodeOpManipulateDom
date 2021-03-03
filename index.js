@@ -74,9 +74,6 @@ function handleClick(event) {
   //Make sure featured image section is visible
   document.getElementById('feat-section').style.display = 'block';
 
-  
-  
-
 }
 
 
